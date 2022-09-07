@@ -1,0 +1,5 @@
+frontend
+project
+node_modules
+.env
+!.env.example

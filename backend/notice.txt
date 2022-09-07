@@ -1,0 +1,57 @@
+Prérequis : Node.js est déjà installé
+Du dossier frontend (récupéré sur le git repo) dans un terminal lancer node:
+    - npm install 
+    - npm run start
+
+
+
+ETAPE 1 : Mise en place de l'API
+1. Création d'un fichier backend 
+    (Associer à un Git repository si besoin)
+2. De ce fichier ouvrir un nouveau terminal 
+    - npm init => Attention on doit utiliser comme point d'entrée server.js
+    - Ce processus génère un fichier package.json vierge, dans lequel seront enregistrés les détails de tous les packages npm que nous utiliserons pour ce projet.
+3. Utiliser nodemon 
+    - npm install -g nodemon
+    - Pour lancer le server on écrit nodemon server 
+4. Utiliser Express
+    - npm install express
+    - Utiliser l'application dans app.js
+5. Utiliser MongoDB 
+    - npm install mongoose
+    - importer mongoose dans app.js
+    - ajout d'un message de validation de connexion 
+
+
+
+ETAPE 2 : Création des utilisateurs
+1. Afin d'assurer que deux utilisateurs ne puissent pas utiliser la même adresse e-mail on utilise l'élément : 
+    - npm install mongoose-unique-validator
+2. On crée donc un modèle d'utilisateur dans le dosssier models => user.js
+3. On crée l'infrastructure nécessaire à nos routes d'authentification (un controller et un routeur)
+    - création du fichier controllers => user.js avec fonction sign up et login 
+    - création du fichier routes => user.js
+4. Pour la fonction sign up => on utilise bcrypt pour hash les informations
+    - npm install bcrypt
+5. Afin de protéger les utilisateurs on crée des token d'authentification (controllers)
+    - npm install jsonwebtoken
+6. On crée le middleware d'autentification => auth.js
+
+
+
+ETAPE 3 : Création d'un multer 
+1. on installe muletr 
+    - npm install multer
+2. On crée le sous dossier images qui stockera les images 
+3. On crée le middleware qui permet le téléchargements de fichiers pour que les utilisateurs puissent télécharger des images
+
+
+
+ETAPE 4 : Création des sauces
+1. On crée un modèle sauce, un controlleur et un routeur sauce (avec middleware auth)
+    GET / POST =>  /api/sauces
+    GET / PUT / DELETE => /api/sauces/:id
+    POST => /api/sauces/:id/like
+
+
+
