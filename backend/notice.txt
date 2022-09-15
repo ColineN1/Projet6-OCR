@@ -21,6 +21,9 @@ ETAPE 1 : Mise en place de l'API
     - npm install mongoose
     - importer mongoose dans app.js
     - ajout d'un message de validation de connexion 
+6. Proteger les données avec un fichier .env
+    - npm i dotenv
+    - importe le fichier dotenv dans les fichiers concernés (Protection BD et TokenUser)
 
 
 
@@ -52,6 +55,8 @@ ETAPE 4 : Création des sauces
     GET / POST =>  /api/sauces
     GET / PUT / DELETE => /api/sauces/:id
     POST => /api/sauces/:id/like
+2. Ajout de auth afin d'identifier l'utilisateur lors de chacune des actions sur le site
+3. Ajout de multer pour la création d'une sauce ou sa modification
 
 
 

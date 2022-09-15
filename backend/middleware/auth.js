@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
        /**
         * @todo Mettre le random_token_secret dans un fichier .env :-)
         */
-       const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
+       const decodedToken = jwt.verify(token, process.env.JWT_TOKEN);
        const userId = decodedToken.userId;
        req.auth = {
            userId: userId
